@@ -1,94 +1,508 @@
-<!doctype html>
+<!<!DOCTYPE html>
 <html lang="bn">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ND TOPUP SHOP</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NP TOPUP SHOP</title>
+
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#fff;color:#162f52}
-.header{background:linear-gradient(135deg,#4d00b8,#7b18df);padding:14px 16px 20px;position:sticky;top:0;z-index:5}
-.top{height:120px;background:#fff;border-radius:0 0 18px 18px;display:flex;align-items:center;justify-content:space-between;padding:12px 18px;box-shadow:0 4px 18px #0002}
-.logo{font-size:34px;font-weight:900;font-style:italic;color:#1763dc;text-shadow:2px 2px 0 #111}
-.logo span{color:#ff9d00;font-size:28px;text-shadow:1px 1px 0 #111}
-.login{background:#5b00c9;color:#fff;border:0;border-radius:8px;padding:14px 24px;font-size:18px;font-weight:700}
-.container{padding:18px 15px 100px;max-width:1000px;margin:auto}
-h1{text-align:center;font-size:30px;margin:10px 0 26px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.card{border:1px solid #ddd;border-radius:18px;overflow:hidden;background:#fff;box-shadow:0 2px 5px #6a00a344;cursor:pointer}
-.pic{height:190px;background:linear-gradient(135deg,#220044,#8a00d4);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;text-align:center;font-size:28px;padding:15px}
-.pic small{display:block;font-size:15px}
-.name{text-align:center;font-weight:800;font-size:18px;padding:18px 8px;color:#111;min-height:70px}
-.badge{position:absolute;background:#5b00c9;color:#fff;padding:8px 15px;border-radius:0 0 12px 0;font-weight:700}
-.help{position:fixed;right:18px;bottom:82px;width:60px;height:60px;border-radius:50%;border:0;background:#e83c3c;color:#fff;font-size:27px;box-shadow:0 4px 12px #0004;z-index:8}
-.nav{position:fixed;bottom:0;left:0;right:0;height:72px;background:#fff;border-top:1px solid #ddd;display:flex;justify-content:space-around;align-items:center;z-index:7}
-.nav a{text-decoration:none;color:#666;text-align:center;font-size:13px}.nav b{display:block;font-size:25px}
-.modal{display:none;position:fixed;inset:0;background:#0008;z-index:20;padding:20px;align-items:center;justify-content:center}
-.box{background:#fff;border-radius:18px;padding:22px;width:min(430px,100%);color:#111}
-.box h2{margin-top:0;color:#4f00bd}.box input,.box select{width:100%;padding:13px;margin:7px 0;border:1px solid #ccc;border-radius:8px}
-.submit{width:100%;padding:13px;background:#5b00c9;color:#fff;border:0;border-radius:8px;font-weight:700;margin-top:8px}
-.close{float:right;border:0;background:#eee;border-radius:50%;width:32px;height:32px}
-@media(max-width:700px){.grid{grid-template-columns:repeat(2,1fr);gap:15px}.pic{height:145px;font-size:22px}.name{font-size:15px}.top{height:105px}.logo{font-size:27px}.logo span{font-size:21px}}
-@media(max-width:430px){.grid{grid-template-columns:repeat(2,1fr)}.pic{height:130px}}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
+
+body{
+  background:#070b18;
+  color:#fff;
+}
+
+header{
+  background:#10172d;
+  padding:18px;
+  text-align:center;
+  border-bottom:1px solid #263252;
+}
+
+.logo{
+  font-size:25px;
+  font-weight:bold;
+  color:#00e5ff;
+}
+
+.logo span{
+  color:#fff;
+}
+
+.container{
+  width:92%;
+  max-width:600px;
+  margin:25px auto;
+}
+
+.hero{
+  text-align:center;
+  background:linear-gradient(135deg,#101a38,#101326);
+  padding:30px 18px;
+  border-radius:20px;
+  border:1px solid #263252;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.hero h1 span{
+  color:#00e5ff;
+}
+
+.hero p{
+  color:#aab4d0;
+  font-size:14px;
+  line-height:1.6;
+}
+
+.card{
+  background:#101629;
+  border:1px solid #273252;
+  border-radius:18px;
+  padding:20px;
+  margin-bottom:18px;
+}
+
+.title{
+  font-size:21px;
+  margin-bottom:18px;
+}
+
+.title span{
+  color:#00e5ff;
+}
+
+label{
+  display:block;
+  margin:13px 0 7px;
+  color:#cbd4ed;
+  font-size:14px;
+}
+
+input,select{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:1px solid #34405f;
+  background:#070c1b;
+  color:white;
+  outline:none;
+  font-size:14px;
+}
+
+input:focus,select:focus{
+  border-color:#00e5ff;
+}
+
+.packages{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.package{
+  background:#080e20;
+  border:1px solid #2b3759;
+  border-radius:12px;
+  padding:15px 8px;
+  text-align:center;
+  cursor:pointer;
+}
+
+.package:hover{
+  border-color:#00e5ff;
+}
+
+.package.active{
+  border:2px solid #00e5ff;
+  background:#0b1830;
+}
+
+.package .diamond{
+  font-size:25px;
+}
+
+.package h3{
+  font-size:14px;
+  margin:7px 0;
+}
+
+.package .price{
+  color:#00e5ff;
+  font-weight:bold;
+}
+
+.payment-box{
+  background:#080e20;
+  border:1px solid #293658;
+  padding:15px;
+  border-radius:12px;
+  margin-top:15px;
+}
+
+.payment-box p{
+  font-size:13px;
+  color:#aab4d0;
+  line-height:1.7;
+}
+
+.order-btn{
+  width:100%;
+  padding:15px;
+  margin-top:20px;
+  border:0;
+  border-radius:12px;
+  background:linear-gradient(135deg,#00c878,#00a45f);
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.order-btn:active{
+  transform:scale(.98);
+}
+
+.notice{
+  margin-top:15px;
+  padding:13px;
+  border-radius:10px;
+  background:#211c08;
+  border:1px solid #665a20;
+  color:#f5d66a;
+  font-size:12px;
+  line-height:1.6;
+}
+
+.success{
+  display:none;
+  margin-top:15px;
+  padding:15px;
+  border-radius:12px;
+  background:#08251a;
+  border:1px solid #15935c;
+  color:#69f0b2;
+  line-height:1.6;
+  font-size:14px;
+}
+
+footer{
+  text-align:center;
+  color:#747f9e;
+  padding:30px 15px;
+  font-size:12px;
+}
+
+footer strong{
+  color:#00e5ff;
+}
+
+@media(max-width:360px){
+  .hero h1{
+    font-size:25px;
+  }
+}
 </style>
 </head>
+
 <body>
-<header class="header">
-  <div class="top">
-    <div class="logo">ND <span>TOPUP<br>SHOP</span></div>
-    <button class="login" onclick="alert('Login page পরে যোগ করা হবে')">Login</button>
+
+<header>
+  <div class="logo">
+    NP <span>TOPUP SHOP</span>
   </div>
 </header>
 
-<main class="container">
-<h1>TOP PRODUCTS</h1>
-<div class="grid">
-  <div class="card" onclick="openOrder('FREE AUTO LIKE')"><div class="pic">FREE<br>AUTO LIKE</div><div class="name">FREE AUTO LIKE</div></div>
-  <div class="card" onclick="openOrder('MYSTERY BOX [UID]')"><div class="pic">MYSTERY<br>BOX<br><small>[UID]</small></div><div class="name">MYSTERY BOX [UID]</div></div>
-  <div class="card" onclick="openOrder('MONTHLY OFFER')"><div class="pic">MONTHLY<br>OFFER</div><div class="name">MONTHLY OFFER</div></div>
-  <div class="card" onclick="openOrder('WEEKLY OFFER')"><div class="pic">WEEKLY<br>OFFER</div><div class="name">WEEKLY OFFER</div></div>
+<div class="container">
+
+  <div class="hero">
+    <h1>NP <span>TOPUP SHOP</span></h1>
+    <p>
+      Free Fire Diamond Top Up করুন সহজে ও দ্রুত।
+      আপনার UID সঠিকভাবে দিয়ে অর্ডার করুন।
+    </p>
+  </div>
+
+
+  <!-- ORDER FORM -->
+
+  <div class="card">
+
+    <div class="title">
+      🎮 <span>Free Fire</span> Order Form
+    </div>
+
+    <label>Free Fire UID</label>
+
+    <input
+      type="number"
+      id="uid"
+      placeholder="যেমন: 123456789"
+    >
+
+
+    <label>আপনার নাম</label>
+
+    <input
+      type="text"
+      id="name"
+      placeholder="আপনার নাম লিখুন"
+    >
+
+
+    <label>Diamond / Membership নির্বাচন করুন</label>
+
+    <div class="packages">
+
+      <div class="package"
+           onclick="choosePackage(this,'100 Diamonds - ৳80')">
+        <div class="diamond">💎</div>
+        <h3>100 Diamonds</h3>
+        <div class="price">৳80</div>
+      </div>
+
+      <div class="package"
+           onclick="choosePackage(this,'310 Diamonds - ৳220')">
+        <div class="diamond">💎</div>
+        <h3>310 Diamonds</h3>
+        <div class="price">৳220</div>
+      </div>
+
+      <div class="package"
+           onclick="choosePackage(this,'520 Diamonds - ৳350')">
+        <div class="diamond">💎</div>
+        <h3>520 Diamonds</h3>
+        <div class="price">৳350</div>
+      </div>
+
+      <div class="package"
+           onclick="choosePackage(this,'1060 Diamonds - ৳700')">
+        <div class="diamond">💎</div>
+        <h3>1060 Diamonds</h3>
+        <div class="price">৳700</div>
+      </div>
+
+      <div class="package"
+           onclick="choosePackage(this,'2180 Diamonds - ৳1400')">
+        <div class="diamond">💎</div>
+        <h3>2180 Diamonds</h3>
+        <div class="price">৳1400</div>
+      </div>
+
+      <div class="package"
+           onclick="choosePackage(this,'5600 Diamonds - ৳3500')">
+        <div class="diamond">💎</div>
+        <h3>5600 Diamonds</h3>
+        <div class="price">৳3500</div>
+      </div>
+
+      <div class="package"
+           onclick="choosePackage(this,'Weekly Membership - ৳160')">
+        <div class="diamond">🎁</div>
+        <h3>Weekly</h3>
+        <div class="price">৳160</div>
+      </div>
+
+      <div class="package"
+           onclick="choosePackage(this,'Monthly Membership - ৳700')">
+        <div class="diamond">🎁</div>
+        <h3>Monthly</h3>
+        <div class="price">৳700</div>
+      </div>
+
+    </div>
+
+
+    <input type="hidden" id="selectedPackage">
+
+
+    <label>Payment Method</label>
+
+    <select id="payment">
+      <option value="">-- নির্বাচন করুন --</option>
+      <option value="bKash">bKash</option>
+      <option value="Nagad">Nagad</option>
+      <option value="Rocket">Rocket</option>
+    </select>
+
+
+    <div class="payment-box">
+
+      <p>
+        💳 Payment করার আগে সঠিক নম্বর নিশ্চিত করুন।<br>
+        Payment করার পর Transaction ID নিচের ঘরে দিন।
+      </p>
+
+    </div>
+
+
+    <label>Transaction ID</label>
+
+    <input
+      type="text"
+      id="trx"
+      placeholder="Transaction ID লিখুন"
+    >
+
+
+    <button class="order-btn" onclick="sendOrder()">
+      📱 WhatsApp-এ অর্ডার পাঠান
+    </button>
+
+
+    <div class="success" id="success">
+      ✅ আপনার অর্ডারের তথ্য প্রস্তুত হয়েছে।<br>
+      WhatsApp খুলে অর্ডারটি পাঠিয়ে দিন।
+    </div>
+
+
+    <div class="notice">
+      ⚠️ গুরুত্বপূর্ণ: Free Fire Password বা OTP কখনো কারো সাথে শেয়ার করবেন না।
+      শুধু UID দিয়ে Top Up করুন।
+    </div>
+
+  </div>
+
 </div>
 
-<h1 style="margin-top:60px">FREE FIRE</h1>
-<div class="grid">
-  <div class="card" onclick="openOrder('ID CODE TOPUP')"><div class="pic">ID CODE<br>TOPUP</div><div class="name">ID CODE TOPUP</div></div>
-  <div class="card" onclick="openOrder('UNIPIN VOUCHER')"><div class="pic">UNIPIN<br>VOUCHER</div><div class="name">UNIPIN VOUCHER</div></div>
-  <div class="card" onclick="openOrder('WEEKLY / MONTHLY')"><div class="pic">WEEKLY<br>MONTHLY</div><div class="name">WEEKLY / MONTHLY</div></div>
-</div>
-</main>
 
-<button class="help" onclick="alert('WhatsApp/Contact link এখানে বসাতে পারবে')">☎</button>
+<footer>
 
-<nav class="nav">
-<a href="#"><b>⌂</b>Home</a>
-<a href="#"><b>▶</b>Tutorial</a>
-<a href="#"><b>◈</b>Topup</a>
-<a href="#"><b>◉</b>Contact Us</a>
-</nav>
+  <strong>NP TOPUP SHOP</strong><br>
 
-<div class="modal" id="modal">
- <div class="box">
-  <button class="close" onclick="closeOrder()">×</button>
-  <h2 id="productTitle">Order</h2>
-  <input id="uid" placeholder="Free Fire UID">
-  <input id="phone" placeholder="আপনার মোবাইল নম্বর">
-  <select id="payment"><option>bKash</option><option>Nagad</option></select>
-  <input id="trx" placeholder="Transaction ID (প্রয়োজনে)">
-  <button class="submit" onclick="submitOrder()">Order Submit</button>
-  <p style="font-size:12px;color:#666">নোট: এটি ডেমো অর্ডার ফর্ম। আসল payment gateway/auto delivery আলাদাভাবে সংযুক্ত করতে হবে।</p>
- </div>
-</div>
+  Fast • Simple • Reliable Top Up Service<br><br>
+
+  © 2026 NP TOPUP SHOP
+
+</footer>
+
 
 <script>
-let selected='';
-function openOrder(p){selected=p;document.getElementById('productTitle').textContent=p;document.getElementById('modal').style.display='flex'}
-function closeOrder(){document.getElementById('modal').style.display='none'}
-function submitOrder(){
- const uid=document.getElementById('uid').value.trim();
- const phone=document.getElementById('phone').value.trim();
- if(!uid||!phone){alert('UID এবং মোবাইল নম্বর দিন');return}
- alert('ডেমো অর্ডার নেওয়া হয়েছে: '+selected+'\\nUID: '+uid);
- closeOrder();
+
+/*
+========================================
+তোমার WhatsApp নম্বর এখানে বসাও।
+
+উদাহরণ:
+8801712345678
+
++ চিহ্ন ব্যবহার করবে না।
+========================================
+*/
+
+const whatsappNumber = "8801XXXXXXXXX";
+
+
+let selectedPackage = "";
+
+
+/* Package নির্বাচন */
+
+function choosePackage(element, packageName){
+
+  document.querySelectorAll(".package")
+    .forEach(function(item){
+      item.classList.remove("active");
+    });
+
+  element.classList.add("active");
+
+  selectedPackage = packageName;
+
+  document.getElementById("selectedPackage")
+    .value = packageName;
 }
+
+
+/* WhatsApp Order */
+
+function sendOrder(){
+
+  const uid =
+    document.getElementById("uid").value.trim();
+
+  const name =
+    document.getElementById("name").value.trim();
+
+  const payment =
+    document.getElementById("payment").value;
+
+  const trx =
+    document.getElementById("trx").value.trim();
+
+
+  if(uid === ""){
+    alert("❌ Free Fire UID দিন।");
+    return;
+  }
+
+
+  if(name === ""){
+    alert("❌ আপনার নাম দিন।");
+    return;
+  }
+
+
+  if(selectedPackage === ""){
+    alert("❌ একটি Diamond Package নির্বাচন করুন।");
+    return;
+  }
+
+
+  if(payment === ""){
+    alert("❌ Payment Method নির্বাচন করুন।");
+    return;
+  }
+
+
+  if(trx === ""){
+    alert("❌ Transaction ID দিন।");
+    return;
+  }
+
+
+  const message =
+`🔥 NP TOPUP SHOP - NEW ORDER
+
+👤 Name: ${name}
+
+🎮 Free Fire UID: ${uid}
+
+💎 Package: ${selectedPackage}
+
+💳 Payment: ${payment}
+
+🧾 Transaction ID: ${trx}
+
+✅ Please confirm my order.`;
+
+
+  const whatsappURL =
+    "https://wa.me/" +
+    whatsappNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+  document.getElementById("success").style.display = "block";
+
+
+  window.open(whatsappURL,"_blank");
+
+}
+
 </script>
+
 </body>
 </html>
